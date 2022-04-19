@@ -1,5 +1,4 @@
 #!/bin/bash
 
 cd /home/ubuntu
-npm install
-npm start
+pm2 start npm -- start
