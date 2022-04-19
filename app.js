@@ -37,14 +37,10 @@ app.use("/page", PageController);
 app.use("/excel", excelUploadController);
 app.use("/language", languageConotroller);
 
-
-app.listen(80, ()=> {
-  console.log("Server running up!");
-})
-// sequelize.sync().then((req) => {
-//   app.listen(process.env.PORT, () => {
-//     console.log(
-//       `server listening in http://${process.env.HOSTNAME}:${process.env.PORT}`
-//     );
-//   });
-// });
+sequelize.sync().then((req) => {
+  app.listen(process.env.PORT, () => {
+    console.log(
+      `server listening in http://${process.env.HOSTNAME}:${process.env.PORT}`
+    );
+  });
+});
